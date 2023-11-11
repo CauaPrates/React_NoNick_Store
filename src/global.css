@@ -1,0 +1,34 @@
+:root{
+    --white: #fff;
+    --gray-100: #E9EBF8;
+    --gray-300: #c4c4cc;
+    --gray-400: #777777;
+    --gray-600: #323238;
+    --gray-700: #29292e;
+    --gray-800: #202024;
+    --gray-900: #121214;
+    --black: #000;
+
+}
+
+a{
+    text-decoration: none;
+    color: var(--black);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--white);
+    color: var(--black);
+    -webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea, button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+}
