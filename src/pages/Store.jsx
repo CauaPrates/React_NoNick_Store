@@ -4,7 +4,9 @@ import styles from '../pages/Store.module.css';
 export const Store = () =>{
 
     const urlApi = "http://localhost:8080/api/products";
-    const [data, setData] = useState([]);
+    const [dataCamisetas, setDataCamisetas] = useState([]);
+    const [dataTenis, setDataTenis] = useState([]);
+    const [dataAcessorios, setDataAcessorios] = useState([]);
 
     const getAll = () => {
         try {
@@ -12,7 +14,9 @@ export const Store = () =>{
             .then(response => response.json())
             .then(data => {
                 
-                setData(data)
+                setDataAcessorios(data.Acessorios);
+                setDataCamisetas(data.Camisetas);
+                setDataTenis(data.Tenis);
                 return data;
             });
     
@@ -37,11 +41,12 @@ export const Store = () =>{
         <div className={styles.div_prods}>
             
         {
-        data.map((item) => (
+            
+        dataTenis.map((item) => (
                     <div className="div_prod" key={item.idProduct}>
                         
                         <div>
-                            <img src ={item.productImages} className={styles.img_prod} alt="Not Found"/>
+                            <img src ={item.thumbnail} className={styles.img_prod} alt="Not Found"/>
                         </div>
 
                         <div className={styles.div_info}>
