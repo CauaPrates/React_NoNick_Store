@@ -4,7 +4,9 @@ import styles from '../pages/Store.module.css';
 export const Store = () =>{
 
     const urlApi = "http://localhost:8080/api/products";
-    const [data, setData] = useState([]);
+    const [dataCamisetas, setDataCamisetas] = useState([]);
+    const [dataTenis, setDataTenis] = useState([]);
+    const [dataAcessorios, setDataAcessorios] = useState([]);
 
     const getAll = () => {
         try {
@@ -12,7 +14,9 @@ export const Store = () =>{
             .then(response => response.json())
             .then(data => {
                 
-                setData(data)
+                    setDataAcessorios(data.Acessorios || []);
+                    setDataCamisetas(data.Camisetas || []);
+                    setDataTenis(data.Tenis || []);
                 return data;
             });
     
@@ -30,28 +34,73 @@ export const Store = () =>{
 
     },[])
 
+    const formatNumber = (number) => {
+        return number.toFixed(2).replace('.', ',');
+    }
+
+    const truncateText = (text, maxLength) => {
+        maxLength = 20;
+        if (text.length > maxLength) {
+            return text.slice(0, maxLength) + "...";
+        }
+        return text;
+    }
+
     return (
 
     <div className={styles.main}>
         <h2>T-shirts</h2>
         <div className={styles.div_prods}>
             
-        {
-        data.map((item) => (
-                    <div className="div_prod" key={item.idProduct}>
-                        
-                        <div>
-                            <img src ={item.productImages} className={styles.img_prod} alt="Not Found"/>
+        {dataCamisetas.length > 0 && (
+                    dataCamisetas.map((item) => (
+                        <div className="div_prod" key={item.idProduct}>
+                            <div>
+                                <img src={item.thumbnail} className={styles.img_prod} alt="Not Found" />
+                            </div>
+                            <div className={styles.div_info}>
+                                <a href="#"><h4>{truncateText(item.name)}</h4></a>
+                                <p>R$ {formatNumber(item.value)}</p>
+                            </div>
                         </div>
+                    ))
+                )}
 
-                        <div className={styles.div_info}>
-                            <a href="#"><h4>{item.name}</h4></a>
-                            <h4>{item.value}</h4>
+        </div>
+        <h2>Sneakers</h2>
+        <div className={styles.div_prods}>
+            
+        {dataTenis.length > 0 && (
+                    dataTenis.map((item) => (
+                        <div className="div_prod" key={item.idProduct}>
+                            <div>
+                                <img src={item.thumbnail} className={styles.img_prod} alt="Not Found" />
+                            </div>
+                            <div className={styles.div_info}>
+                                <a href="#"><h4>{truncateText(item.name)}</h4></a>
+                                <p>R$ {formatNumber(item.value)}</p>
+                            </div>
                         </div>
-                        
-                    </div>
-                ))
-        }
+                    ))
+                )}
+
+        </div>
+        <h2>Accessories</h2>
+        <div className={styles.div_prods}>
+            
+        {dataAcessorios.length > 0 && (
+                    dataAcessorios.map((item) => (
+                        <div className="div_prod" key={item.idProduct}>
+                            <div>
+                                <img src={item.thumbnail} className={styles.img_prod} alt="Not Found" />
+                            </div>
+                            <div className={styles.div_info}>
+                                <a href="#"><h4>{truncateText(item.name)}</h4></a>
+                                <p>R$ {formatNumber(item.value)}</p>
+                            </div>
+                        </div>
+                    ))
+                )}
 
         </div>
     </div>
