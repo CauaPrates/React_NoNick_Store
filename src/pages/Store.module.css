@@ -17,7 +17,7 @@
 
 .div_info{
     text-align: start;
-    gap: 5px;
+    gap: 8px;
     margin-top: -4px;
     background-color: #C6C6C6;
     border: rgb(158, 158, 158) 0.5px solid;
@@ -28,17 +28,18 @@
 
 .img_prod{
    
-    width: 200px; 
-    height: 200px; 
-    object-fit: contain;
+    width: 250px; 
+    height: 300px; 
+    object-fit: cover;
 
 }
 
 h2{
-
+    margin-top: 50px;
     text-align: start;
 
 }
+
 
 a{
     text-decoration: none;
