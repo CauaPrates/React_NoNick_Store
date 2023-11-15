@@ -1,171 +1,137 @@
-:root{
+:root {
     --color-light: #E9EBF8;
-    --color-dark-0:  #777777;
-}
-
-html{
+    --color-dark-0: #777777;
+  }
+  
+  html {
     scroll-behavior: smooth;
-}
-
-header,nav,main{
-
+  }
+  
+  header, nav, main {
     display: flex;
-    margin: 0px 15px 0px 15px;
+    margin: 0 0.88rem; /* Utilizando uma unidade relativa */
     background-color: transparent;
     border: black;
-    
-
-}
-
-.headerContainer{
-
+  }
+  
+  .headerContainer {
     background: rgb(255, 255, 255);
     width: 100%;
-
-}
-
-header{
-    
-    height: 90px;
+  }
+  
+  header {
+    height: 6rem; /* Utilizando uma unidade relativa */
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-      
-}
-
-.logo{
-
-    width: 220px;
+  }
+  
+  .logo {
+    width: 14rem; /* Utilizando uma unidade relativa */
     position: absolute;
     left: 50%;
     right: 50%;
-    top: 13px;
-    /*metade do tamanho da imagem vai ser negativada no Margin-left*/
-    margin-left: -110px;
+    top: 1rem; /* Utilizando uma unidade relativa */
+    margin-left: -6.5rem; /* Metade do tamanho da imagem, negativada no margin-left */
     text-align: center;
-
-}
-
-header nav{
-
+  }
+  
+  header nav {
     cursor: pointer;
-    gap: 10px;
-    
-}
-
-
-#openMenu, #closeMenu, #menu{
+    gap: 1rem; /* Utilizando uma unidade relativa */
+  }
+  
+  #openMenu, #closeMenu, #menu {
     display: none;
-}
-
-.menu{
-    position:absolute;
+  }
+  
+  .menu {
+    position: absolute;
     top: -100px;
-}
-
-.nav_bot{
-
+  }
+  
+  .nav_bot {
     flex: 1 1 100vw;
-    height: 40px;
+    height: 2.5rem; /* Utilizando uma unidade relativa */
     justify-content: center;
     align-items: center;
-
-}
-
-nav a{
-
+  }
+  
+  nav a {
     margin: 1%;
-    font-size: 13pt;
+    font-size: 1.3rem; /* Utilizando uma unidade relativa */
     font-weight: bolder;
-}
-
-header svg:hover, header a:hover, .nav_bot a:hover{
-    
+  }
+  
+  header svg:hover, header a:hover, .nav_bot a:hover {
     color: var(--color-dark-0);
-}
-
-a, svg{
-
-    transition: 500ms;
-    
-}
-
-.btn_more{
+  }
+  
+  a, svg {
+    transition: 0.5s;
+  }
+  
+  .btn_more {
     display: none;
-}
-
-
-
-
-
-@media only screen and (max-width: 717px){
-
-    .btn_more, #closeMenu{
-        display: block;
+  }
+  
+  @media only screen and (max-width: 717px) {
+    .btn_more, #closeMenu {
+      display: block;
     }
-    
-    .link_login, .btn_user,.btn_search,.nav_bot{
-        display: none;
+  
+    .link_login, .btn_user, .btn_search, .nav_bot {
+      display: none;
     }
-    header nav{
-
-        
-        gap: 8px;
-        
+  
+    header nav {
+      gap: 0.8rem; /* Utilizando uma unidade relativa */
     }
-    header,nav{
-
-        margin: 0px 10px;
- 
-    
+  
+    header, nav {
+      margin: 0 1rem; /* Utilizando uma unidade relativa */
     }
-    .logo{
-        width: 180px;
-        position: absolute;
-        left: 50%;
-        right: 50%;
-        top: 17px;
-        /*metade do tamanho da imagem vai ser negativada no Margin-left*/
-        margin-left: -90px;
-        text-align: center;  
+  
+    .logo {
+      width: 9rem; /* Utilizando uma unidade relativa */
+      position: absolute;
+      left: 50%;
+      right: 50%;
+      top: 1.6rem; /* Utilizando uma unidade relativa */
+      margin-left: -4.5rem; /* Metade do tamanho da imagem, negativada no margin-left */
+      text-align: center;
     }
-    .menu{
-
-        display: none;
-        position: absolute;
-        left: -15px;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        flex-direction: column;
-        width: 100vw;
-        height: 100vh;
-        background-color: var(--color-light);
-        padding-left: 25px;
-        padding-top: 30px;
-
+  
+    .menu {
+      display: none;
+      position: absolute;
+      left: -15px;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      flex-direction: column;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--color-light);
+      padding-left: 1.5625rem; /* Utilizando uma unidade relativa */
+      padding-top: 3.75rem; /* Utilizando uma unidade relativa */
     }
-
-    .btm_xContainer{
-       padding-left: 3px;
-        padding-bottom: 30px;
+  
+    .btm_xContainer {
+      padding-left: 0.18rem; /* Utilizando uma unidade relativa */
+      padding-bottom: 3.75rem; /* Utilizando uma unidade relativa */
     }
-
-    
-    
-    
-}
-
-@media only screen and(max-width: 923px) {
-
-    main{
-        height: calc(100vh - 330px);
+  }
+  
+  @media only screen and (max-width: 923px) {
+    main {
+      height: calc(100vh - 13.125rem); /* Utilizando uma unidade relativa */
     }
-   
-}
-
-@media only screen and (max-width: 717px){
-    nav{
-        height: 100px;
+  }
+  
+  @media only screen and (max-width: 717px) {
+    nav {
+      height: 6rem; /* Utilizando uma unidade relativa */
     }
-}
+  }
+  
