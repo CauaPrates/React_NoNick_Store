@@ -34,6 +34,18 @@ export const Store = () =>{
 
     },[])
 
+    const formatNumber = (number) => {
+        return number.toFixed(2).replace('.', ',');
+    }
+
+    const truncateText = (text, maxLength) => {
+        maxLength = 20;
+        if (text.length > maxLength) {
+            return text.slice(0, maxLength) + "...";
+        }
+        return text;
+    }
+
     return (
 
     <div className={styles.main}>
@@ -47,8 +59,8 @@ export const Store = () =>{
                                 <img src={item.thumbnail} className={styles.img_prod} alt="Not Found" />
                             </div>
                             <div className={styles.div_info}>
-                                <a href="#"><h4>{item.name}</h4></a>
-                                <h4>{item.value}</h4>
+                                <a href="#"><h4>{truncateText(item.name)}</h4></a>
+                                <p>R$ {formatNumber(item.value)}</p>
                             </div>
                         </div>
                     ))
@@ -65,8 +77,8 @@ export const Store = () =>{
                                 <img src={item.thumbnail} className={styles.img_prod} alt="Not Found" />
                             </div>
                             <div className={styles.div_info}>
-                                <a href="#"><h4>{item.name}</h4></a>
-                                <h4>{item.value}</h4>
+                                <a href="#"><h4>{truncateText(item.name)}</h4></a>
+                                <p>R$ {formatNumber(item.value)}</p>
                             </div>
                         </div>
                     ))
@@ -83,8 +95,8 @@ export const Store = () =>{
                                 <img src={item.thumbnail} className={styles.img_prod} alt="Not Found" />
                             </div>
                             <div className={styles.div_info}>
-                                <a href="#"><h4>{item.name}</h4></a>
-                                <h4>{item.value}</h4>
+                                <a href="#"><h4>{truncateText(item.name)}</h4></a>
+                                <p>R$ {formatNumber(item.value)}</p>
                             </div>
                         </div>
                     ))
