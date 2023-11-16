@@ -1,24 +1,22 @@
+ /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #292929 #ffffff00;
+  }
 
-/* Firefox */
-* {
-  scrollbar-width: none;
-  scrollbar-color: #000000 #ffffff;
-}
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
 
-/* Chrome, Edge e Safari */
-*::-webkit-scrollbar {
-  width: 1%; 
-  height: 1%; 
-}
+  *::-webkit-scrollbar-track {
+    background: #ffffff00;
+  }
 
-*::-webkit-scrollbar-track {
-  background: #ffffff;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #000000;
-  border: 1px solid #ffffff; 
-}
+  *::-webkit-scrollbar-thumb {
+    background-color: #323232;
+  }
 
 :root {
   --branco: #fff;
@@ -60,3 +58,5 @@ button {
   font-weight: 400;
   font-size: 1rem;
 }
+
+
