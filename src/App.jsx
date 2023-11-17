@@ -1,7 +1,7 @@
 import './global.css';
 import { Header } from './components/Header';
 import styles from './App.module.css'
-import { Main } from './components/Main';
+import { Main } from './components/Routes';
 import { Footer } from './components/Footer';
 
 

@@ -28,8 +28,8 @@
 
 .img_prod{
    
-    width: 250px; 
-    height: 300px; 
+    width: 230px; 
+    height: 280px; 
     object-fit: cover;
 
 }
@@ -51,6 +51,13 @@ a{
 
     main{
         height: calc(100vh - 330px);
+    }
+    .img_prod{
+   
+        width: 200px; 
+        height: 243px; 
+        object-fit: cover;
+    
     }
    
 }
