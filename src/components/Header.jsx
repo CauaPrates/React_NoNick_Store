@@ -1,6 +1,8 @@
+import React from 'react'
 import styles from '../components/Header.module.css'
-
 import NoNickLogo from '../assets/noNickLogo 2.svg'
+import { Link } from 'phosphor-react'
+
 
 export function Header(){
     return(
@@ -19,7 +21,7 @@ export function Header(){
                     </button>
                 </div>
 
-                <a href="/Html/Login.html">Registe/Login</a>
+                <a href=''>Registe/Login</a>
                 <a href="">Camisetas</a>
                 <a href="">Tênis</a>
                 <a href="">Acessórios</a>
@@ -28,7 +30,7 @@ export function Header(){
             </nav>
 
             <nav className={styles.nav_top}>
-                <a href="/Html/Login.html" className={styles.link_login}>
+                <a href="/Login" className={styles.link_login}>
                     Register/Login
                 </a>
                 <button className={styles.btn_more} id="openMenu">

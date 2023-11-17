@@ -1,24 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
 
-*{
+button {
+  background: none;
+  border: none;
+}
 
-    margin: 0%;
-    padding: 0%;
-    font-family: 'Inter', sans-serif;
-    box-sizing: border-box;
-    
-  }
-  
-  button{
-    background:none;
-    border: none;
-    
-  }
-  
-  .App {
-    text-align: center;
-  }
-  
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}

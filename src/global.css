@@ -1,55 +1,62 @@
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
+ /* Firefox */
   * {
-    scrollbar-width: none;
-    scrollbar-color: #000000 #ffffff;
+    scrollbar-width: auto;
+    scrollbar-color: #292929 #ffffff00;
   }
 
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: 7px;
+    height: 7px;
   }
 
   *::-webkit-scrollbar-track {
-    background: #ffffff;
+    background: #ffffff00;
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: #000000;
-    border: #ffffff;
+    background-color: #323232;
   }
-:root{
-    --white: #fff;
-    --gray-100: #E9EBF8;
-    --gray-300: #c4c4cc;
-    --gray-400: #777777;
-    --gray-600: #323238;
-    --gray-700: #29292e;
-    --gray-800: #202024;
-    --gray-900: #121214;
-    --black: #000;
 
-}
-
-a{
-    text-decoration: none;
-    color: var(--black);
-}
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --branco: #fff;
+  --cinza-100: #E9EBF8;
+  --cinza-300: #c4c4cc;
+  --cinza-400: #777777;
+  --cinza-600: #323238;
+  --cinza-650: #323232;
+  --cinza-700: #29292e;
+  --cinza-800: #202024;
+  --cinza-900: #121214;
+  --preto: #000;
 }
 
-body{
-    background: var(--white);
-    color: var(--black);
-    -webkit-font-smoothing: antialiased;
+a {
+  text-decoration: none;
+  color: var(--preto);
 }
 
-body, input, textarea, button {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  scroll-behavior: smooth;
 }
+
+body {
+  background: var(--branco);
+  color: var(--preto);
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+
