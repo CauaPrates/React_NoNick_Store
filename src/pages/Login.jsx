@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Certifique-se de importar o Link se estiver usando React Router
+import { Link } from 'react-router-dom';
 import noNickLogo from '../assets/noNickLogo 2.svg';
+import styles from '../pages/Login.module.css';
 
 export const Login = () => {
+
   const processForm = () => {
     // Lógica de processamento do formulário aqui
     console.log('Formulário processado!');
@@ -10,12 +12,12 @@ export const Login = () => {
 
   return (
     <div>
-      <div className="logoContainer">
-        <Link to="/Html/Home.html">
-          <img src={noNickLogo} className="logo" alt="NoNick" />
+      <div className={styles.logoContainer}>
+        <Link to="/">
+          <img src={noNickLogo} className={styles.logo} alt="NoNick" />
         </Link>
 
-        <div className="welcomeContainer">
+        <div className={styles.welcomeContainer}>
           <h2>Seja bem-vindo!!</h2>
           <p>
             Você já tem uma conta?<br />
@@ -23,16 +25,16 @@ export const Login = () => {
           </p>
         </div>
 
-        <div className="buttomContainer">
-          <Link to="/Html/Login.html" className="aButton">
+        <div className={styles.buttonContainer}>
+          <Link to="" className={styles.aButton}>
             <button>Entrar</button>
           </Link>
 
-          <a href="#">Estou com problemas</a>
+          <a href="">Estou com problemas</a>
         </div>
 
-        <div className="rightContainer">
-          <div className="LoginTittle">
+        <div className={styles.rightContainer}>
+          <div className={styles.loginTitle}>
             <h2>Faça seu registro</h2>
             <p>Preencha seus dados</p>
           </div>
@@ -71,7 +73,7 @@ export const Login = () => {
             /><br/><br/>
           </form>
 
-          <div className="buttonRContainer">
+          <div className={styles.buttonRContainer}>
             <button type="button" onClick={processForm}>
               Cadastrar
             </button>

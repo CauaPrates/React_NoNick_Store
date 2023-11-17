@@ -50,7 +50,7 @@ export function Header(){
 
 
 
-            <a href="#">
+            <a href="/">
                 <img src={NoNickLogo} className={styles.logo} alt="LOGO"/>
             </a>
 
