@@ -1,55 +1,111 @@
 :root {
-    --color-light: #E9EBF8;
-    --color-dark-0: #777777;
-    --cinza-650: #323232;
-  }
-  
-  header, nav, main {
-    display: flex;
-    margin: 0 0.88rem; /* Utilizando uma unidade relativa */
-    background-color: transparent;
+  --color-light: #E9EBF8;
+  --color-dark-0: #777777;
+  --cinza-650: #323232;
+}
 
+header,
+nav,
+main {
+  display: flex;
+  margin: 0 0.88rem; /* Utilizando uma unidade relativa */
+  background-color: transparent;
+}
+
+.headerContainer {
+  background: rgb(255, 255, 255);
+  width: 100%;
+}
+
+header {
+  height: 6rem; /* Utilizando uma unidade relativa */
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a {
+  color: black;
+}
+
+.logo {
+  width: 14rem; /* Utilizando uma unidade relativa */
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 1rem; /* Utilizando uma unidade relativa */
+  margin-left: -6.5rem; /* Metade do tamanho da imagem, negativada no margin-left */
+  text-align: center;
+}
+
+header nav {
+  cursor: pointer;
+  gap: 1rem; /* Utilizando uma unidade relativa */
+}
+
+#openMenu,
+#closeMenu,
+#menu {
+  display: none;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  left: -15px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-light);
+  padding-left: 1.5625rem; /* Utilizando uma unidade relativa */
+  padding-top: 3.75rem; /* Utilizando uma unidade relativa */
+}
+
+.btm_xContainer {
+  padding-left: 0.18rem; /* Utilizando uma unidade relativa */
+  padding-bottom: 3.75rem; /* Utilizando uma unidade relativa */
+}
+
+@media only screen and (max-width: 717px) {
+  .menu_bar_container {
+    display: block;
   }
-  
-  .headerContainer {
-    background: rgb(255, 255, 255);
-    width: 100%;
+
+  header nav {
+    gap: 0.8rem; /* Utilizando uma unidade relativa */
   }
-  
-  header {
-    height: 6rem; /* Utilizando uma unidade relativa */
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+
+  header,
+  nav {
+    margin: 0 0.63rem; /* Utilizando uma unidade relativa */
   }
-  
+
   .logo {
-    width: 14rem; /* Utilizando uma unidade relativa */
+    width: 9rem; /* Utilizando uma unidade relativa */
     position: absolute;
     left: 50%;
     right: 50%;
-    top: 1rem; /* Utilizando uma unidade relativa */
-    margin-left: -6.5rem; /* Metade do tamanho da imagem, negativada no margin-left */
+    top: 1.6rem; /* Utilizando uma unidade relativa */
+    margin-left: -4.5rem; /* Metade do tamanho da imagem, negativada no margin-left */
     text-align: center;
   }
-  
-  header nav {
-    cursor: pointer;
-    gap: 1rem; /* Utilizando uma unidade relativa */
-  }
-  
+
   .nav_bot {
     flex: 1 1 100vw;
     height: 2.5rem; /* Utilizando uma unidade relativa */
     justify-content: center;
     align-items: center;
   }
-  
+
   nav a {
     margin: 1%;
     font-size: 1.3rem; /* Utilizando uma unidade relativa */
     position: relative;
     font-weight: bolder;
+    color: black;
   }
 
   nav a::before {
@@ -62,58 +118,51 @@
     left: 0;
     transform-origin: right;
     transform: scaleX(0);
-    transition: transform .3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
   }
-  
-  nav a:hover::before {
-  transform-origin: left;
-  transform: scaleX(1);
-}
 
-.menu_bar_container{
-  margin: 0.62rem;
-  display: none;
-}
-  
-  @media only screen and (max-width: 717px) {
-    
-    .menu_bar_container{
-      display: block;
-    }
-  
-    .link_login, .btn_user, .btn_search, .nav_bot {
-      display: none;
-    }
-  
-    header nav {
-      gap: 0.8rem; /* Utilizando uma unidade relativa */
-    }
-  
-    header, nav {
-      margin: 0 0.63rem; /* Utilizando uma unidade relativa */
-    }
-  
-    .logo {
-      width: 9rem; /* Utilizando uma unidade relativa */
-      position: absolute;
-      left: 50%;
-      right: 50%;
-      top: 1.6rem; /* Utilizando uma unidade relativa */
-      margin-left: -4.5rem; /* Metade do tamanho da imagem, negativada no margin-left */
-      text-align: center;
-    }
-  
+  nav a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
   }
-  
+
+  .btn_login {
+    margin: 1%;
+    font-size: 1.3rem; /* Utilizando uma unidade relativa */
+    position: relative;
+    font-weight: bolder;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .btn_login::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .btn_login:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
   @media only screen and (max-width: 923px) {
     main {
       height: calc(100vh - 13.125rem); /* Utilizando uma unidade relativa */
     }
   }
-  
+
   @media only screen and (max-width: 717px) {
     nav {
       height: 6rem; /* Utilizando uma unidade relativa */
     }
   }
-  
+}

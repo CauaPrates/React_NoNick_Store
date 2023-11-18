@@ -2,26 +2,59 @@ import React, { useState } from 'react';
 import styles from '../components/Header.module.css';
 import NoNickLogo from '../assets/noNickLogo 2.svg';
 import { Menu } from './Menu';
+import Modal from 'react-modal';
+import ModalWindow from './ModalWindow';
 
-export function Header() {
-    const [isPopupVisible, setPopupVisibility] = useState(false);
+// Importe o estilo do Modal
+import '../components/Modal.module.css';
 
-    const handlePopupToggle = () => {
-        setPopupVisibility(!isPopupVisible);
+
+// Configuração do react-modal
+Modal.setAppElement('#root'); // Substitua '#root' pelo id do elemento root da sua aplicação.
+
+export function Header({ onLoginClick }) {
+    const [isModalVisible, setModalVisibility] = useState(false);
+
+    const handleModalToggle = () => {
+        setModalVisibility(!isModalVisible);
     };
+
+    const handleCloseModal = () => {
+        setModalVisibility(false);
+    };
+
     return (
         <div className={styles.headerContainer}>
 
-            
-            <header> 
+            {isModalVisible && <div className={styles.blurBackground} onClick={handleCloseModal}></div>}
+
+            <header>
+
                 <div className={styles.menu_bar_container}>
                 <Menu className={styles.menu_bar}></Menu>
                 </div>
-            
+
                 <nav className={styles.nav_top}>
-                    <a href="/login" className={styles.link_login} onClick={handlePopupToggle}>
+                    <button className={styles.btn_login} onClick={handleModalToggle}>
                         Register/Login
-                    </a>
+                    </button>
+
+                 
+
+                    
+                    <button className={styles.btn_more} id="openMenu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 25 20" fill="none">
+                            <path d="M2 2H23H2Z" fill="currentColor" />
+                            <path d="M2 2H23" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 10H23H2Z" fill="currentColor" />
+                            <path d="M2 10H23" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 18H23H2Z" fill="currentColor" />
+                            <path d="M2 18H23" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
                 </nav>
 
                 <a href="/">
@@ -80,8 +113,8 @@ export function Header() {
                     </button>
                 </nav>
 
+                
             </header>
-
             <nav className={styles.nav_bot}>
                 <a href="#">
                     Camisetas
@@ -94,7 +127,13 @@ export function Header() {
                 </a>
 
             </nav>
-            {isPopupVisible && <LoginPopup onClose={handlePopupToggle} />}
+            {isModalVisible && (
+                    <ModalWindow
+                        isOpen={isModalVisible}
+                        onRequestClose={handleCloseModal}
+                        contentLabel="Login Modal"
+                    />
+                )}
         </div>
     )
 }
