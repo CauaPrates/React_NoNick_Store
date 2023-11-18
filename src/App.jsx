@@ -24,7 +24,7 @@ export function App() {
   
           <Main />
         </Route>
-        <Route path="/">
+        <Route path={!pagesWithoutHeaderFooter}>
           
           {shouldShowHeaderFooter && <Header />}
           <Main />
