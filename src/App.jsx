@@ -6,7 +6,9 @@ import { Footer } from './components/Footer';
 import React, { useEffect, useState } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 
-const pagesWithoutHeaderFooter = ['/login', '/register'];
+
+const pagesWithoutHeaderFooter = ['/login', '/register','/menu']; 
+
 
 export function App() {
   const location = useLocation();
@@ -26,7 +28,6 @@ export function App() {
 
       <Switch>
         <Route path={pagesWithoutHeaderFooter}>
-
           <Main />
         </Route>
         <Route path={!pagesWithoutHeaderFooter}>

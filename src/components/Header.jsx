@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import styles from '../components/Header.module.css';
 import NoNickLogo from '../assets/noNickLogo 2.svg';
+import { Menu } from './Menu';
 import Modal from 'react-modal';
 import ModalWindow from './ModalWindow';
 
 // Importe o estilo do Modal
 import '../components/Modal.module.css';
+
 
 // Configuração do react-modal
 Modal.setAppElement('#root'); // Substitua '#root' pelo id do elemento root da sua aplicação.
@@ -23,32 +25,23 @@ export function Header({ onLoginClick }) {
 
     return (
         <div className={styles.headerContainer}>
+
             {isModalVisible && <div className={styles.blurBackground} onClick={handleCloseModal}></div>}
+
             <header>
 
-                <nav className={styles.menu} id="menu">
-
-                    <div className={styles.btm_xContainer}>
-                        <button className={styles.btn_x} id="closeMenu">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 25 25" fill="none">
-                                <path d="M2 23L12.5 12.5001M12.5 12.5001L23 2M12.5 12.5001L2 2M12.5 12.5001L23 23"
-                                    stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-
-                    <a href=''>g</a>
-                    <a href="">Camisetas</a>
-                    <a href="">Tênis</a>
-                    <a href="">Acessórios</a>
-                    <a href="">Usuário</a>
-                    <a href="">Pesquisa</a>
-                </nav>
+                <div className={styles.menu_bar_container}>
+                <Menu className={styles.menu_bar}></Menu>
+                </div>
 
                 <nav className={styles.nav_top}>
                     <button className={styles.btn_login} onClick={handleModalToggle}>
                         Register/Login
                     </button>
+
+                 
+
+                    
                     <button className={styles.btn_more} id="openMenu">
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 25 20" fill="none">
                             <path d="M2 2H23H2Z" fill="currentColor" />
@@ -63,8 +56,6 @@ export function Header({ onLoginClick }) {
                         </svg>
                     </button>
                 </nav>
-
-
 
                 <a href="/">
                     <img src={NoNickLogo} className={styles.logo} alt="LOGO" />
