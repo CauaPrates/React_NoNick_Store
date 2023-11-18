@@ -1,8 +1,8 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom';
 import { Store } from '../pages/Store';
-
 import Modal from './ModalWindow';
+
 
 export const Main = () => {
 

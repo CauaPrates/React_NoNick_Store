@@ -1,0 +1,47 @@
+/* Outros estilos aqui */
+
+.menu_container {
+    
+    display: flex;
+    width: fit-content;
+    height: max-content;
+    
+  }
+  
+  .sidebar_open .btn_more {
+    display: none;
+  }
+  
+  .sidebar_open .btn_x {
+    
+    display: block;
+  }
+  
+  .menu_nav {
+    
+    position:absolute;
+    margin: 0%;
+    margin-top: 3rem;
+    text-align: start;
+
+  }
+  .menu_ul{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+    padding: 0 30px;
+    padding-bottom: 1.5rem;
+  }
+
+  .menu_ul a{
+
+    color: var(--cinza-100);
+
+  }
+  
+  
+  /* Adicione animações ou estilos específicos para a transição entre os modos */
+  
