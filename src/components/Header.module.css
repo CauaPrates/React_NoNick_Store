@@ -38,15 +38,6 @@
     gap: 1rem; /* Utilizando uma unidade relativa */
   }
   
-  #openMenu, #closeMenu, #menu {
-    display: none;
-  }
-  
-  .menu {
-    position: absolute;
-    top: -100px;
-  }
-  
   .nav_bot {
     flex: 1 1 100vw;
     height: 2.5rem; /* Utilizando uma unidade relativa */
@@ -78,15 +69,15 @@
   transform-origin: left;
   transform: scaleX(1);
 }
-  
-  
-  
-  .btn_more {
-    display: none;
-  }
+
+.menu_bar_container{
+  margin: 0.62rem;
+  display: none;
+}
   
   @media only screen and (max-width: 717px) {
-    .btn_more, #closeMenu {
+    
+    .menu_bar_container{
       display: block;
     }
   
@@ -112,25 +103,6 @@
       text-align: center;
     }
   
-    .menu {
-      display: none;
-      position: absolute;
-      left: -15px;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      flex-direction: column;
-      width: 100vw;
-      height: 100vh;
-      background-color: var(--color-light);
-      padding-left: 1.5625rem; /* Utilizando uma unidade relativa */
-      padding-top: 3.75rem; /* Utilizando uma unidade relativa */
-    }
-  
-    .btm_xContainer {
-      padding-left: 0.18rem; /* Utilizando uma unidade relativa */
-      padding-bottom: 3.75rem; /* Utilizando uma unidade relativa */
-    }
   }
   
   @media only screen and (max-width: 923px) {
