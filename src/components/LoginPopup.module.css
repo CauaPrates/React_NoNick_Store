@@ -1,27 +1,30 @@
-:root {
-    --color-light1: #E9EBF8;
-    --color-light2: #C6C6C6;
-    --color-light3: #E9EBF8;
-    --color-dark1: #323232;
+:root{
+    --color-light1:#E9EBF8;
+    --color-light2:#C6C6C6;
+    --color-light3:#E9EBF8;
+    --color-dark1:#323232;
     --color-dark2: #8E98A8;
 }
 
-* {
+*{
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
 }
+
+
 .popupContainer {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999; /* Garante que o pop-up esteja acima de outros elementos na página */
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo desfocado */
     padding: 20px;
     border-radius: 10px;
     color: #fff; /* Cor do texto no pop-up */
-  }
+    backdrop-filter: blur(5px); /* Adiciona um leve desfoque ao fundo */
+}
+
 
 .sectionFooter {
     padding-top: 7%;
@@ -30,17 +33,15 @@
     flex-direction: row;
 }
 
-button {
+button{
     background: none;
     border: none;
     cursor: pointer;
 }
-
-footer a {
-    color: var(--color-light1);
+a{
+    color:var(--color-light1);
 }
-
-.leftContainer, .rightContainer {
+.leftContainer,.rightContainer{
     gap: 50px;
     padding: 30px;
     display: flex;
@@ -48,28 +49,28 @@ footer a {
     align-items: center;
     text-align: center;
     justify-content: center;
-}
 
-.leftContainer .buttonContainer, .buttonRContainer {
+}
+.leftContainer .buttomContainer{
     gap: 15px;
     display: flex;
     flex-direction: column;
 }
 
-.leftContainer {
+.leftContainer{
+    
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    background-color: var(--color-dark1);
+    background-color:var(--color-dark1);
     color: var(--color-light1);
     padding-left: 50px;
-    padding-right: 50px;
+    padding-right:50px;
 }
-
-.leftContainer a {
+.leftContainer a{
     font-size: small;
 }
-
-.buttonContainer, .buttonRContainer {
+.buttomContainer{
+    
     text-align: center;
     font-weight: bolder;
     border: #E9EBF8 2px solid;
@@ -77,50 +78,45 @@ footer a {
     border-radius: 10px;
     margin-bottom: 30px;
 }
-
-.leftContainer button {
+.leftContainer button{
+    
     height: 40px;
     font-size: large;
     color: var(--color-light1);
     font-weight: bolder;
-}
 
-button a {
-    text-decoration: none;
 }
-
-.leftContainer .logo {
+button a{
+text-decoration: none;
+}
+.leftContainer .logo{
     width: 180px;
 }
-
-.leftContainer .logoContainer {
+.leftContainer .logoContainer{
     padding-top: 20px;
 }
-
-.leftContainer .welcomeContainer {
+.leftContainer .welcomeContainer{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 40px 0;
+    margin: 40px 0 ;
 }
-
-.welcomeContainer p {
+.welcomeContainer p{
     font-size: smaller;
     font-weight: lighter;
 }
-
-.rightContainer {
+.rightContainer{
+    
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    background-color: var(--color-light2);
+    background-color:var(--color-light2);
     padding: 0 100px;
-}
 
-.rightContainer .loginTitle {
+}
+.rightContainer .LoginTittle{
     padding-top: 50px;
 }
-
-.rightContainer button {
+.rightContainer button{
     font-size: large;
     font-weight: bolder;
     border: var(--color-dark1) 2px solid;
@@ -130,33 +126,38 @@ button a {
     border-radius: 10px;
     color: var(--color-light1);
 }
-
-#noteForm {
-    padding-top: 30px;
+.noteForm{
+    padding-top:30px;
 }
 
-#noteForm input {
+.noteForm input{
+
     font-weight: bolder;
     height: 20px;
     padding: 10px;
     width: 250px;
     border-radius: 7px;
     background-color: var(--color-light3);
-    border: solid 2px var(--color-dark2);
+    border:solid 2px var(--color-dark2);
 }
 
-@media only screen and (max-width: 717px) {
-    main {
+@media only screen and (max-width: 717px){
+    
+
+    section{
         flex-direction: column;
         padding-top: 0%;
     }
-    .leftContainer, .rightContainer {
-        align-items: flex-start;
-        text-align: left;
-        justify-content: flex-start;
+    .leftContainer,.rightContainer{
+    
+        align-items:flex-start;
+        text-align:left;
+        justify-content:flex-start;
+    
     }
 
-    .rightContainer {
+    .rightContainer{
+    
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
         border-top-left-radius: 0px;
@@ -164,9 +165,10 @@ button a {
         padding: 0 50px;
     }
 
-    .leftContainer {
+    .leftContainer{
         padding: 40px 40px;
         gap: 25px;
-        border-radius: 0%;
+       border-radius: 0%;
     }
 }
+

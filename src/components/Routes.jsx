@@ -1,9 +1,8 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom';
 import { Store } from '../pages/Store';
-import { Login } from '../pages/Login';
-import LoginPopup from './LoginPopup';
 
+import LoginPopup from '../components/LoginPopup';
 
 export const Main = () => {
 

@@ -3,7 +3,7 @@
     --color-dark-0: #777777;
     --cinza-650: #323232;
   }
-  
+
   header, nav, main {
     display: flex;
     margin: 0 0.88rem; /* Utilizando uma unidade relativa */

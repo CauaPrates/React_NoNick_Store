@@ -1,18 +1,27 @@
 import React, { useState } from 'react';
 import styles from '../components/Header.module.css';
 import NoNickLogo from '../assets/noNickLogo 2.svg';
+import LoginPopup from './LoginPopup';
+import Modal from 'react-modal';
 
+// Configuração do react-modal
+Modal.setAppElement('#root'); // Substitua '#root' pelo id do elemento root da sua aplicação.
 
-export function Header() {
+export function Header({ onLoginClick }) {
     const [isPopupVisible, setPopupVisibility] = useState(false);
 
     const handlePopupToggle = () => {
         setPopupVisibility(!isPopupVisible);
     };
+
+    const handleCloseModal = () => {
+        setPopupVisibility(false);
+    };
+
     return (
         <div className={styles.headerContainer}>
-
-            <header>
+        {isPopupVisible && <div className={styles.blurBackground} onClick={handleCloseModal}></div>}
+        <header>
 
                 <nav className={styles.menu} id="menu">
 
@@ -25,7 +34,7 @@ export function Header() {
                         </button>
                     </div>
 
-                    <a href=''>Registe/Login</a>
+                    <a href=''>g</a>
                     <a href="">Camisetas</a>
                     <a href="">Tênis</a>
                     <a href="">Acessórios</a>
@@ -34,7 +43,7 @@ export function Header() {
                 </nav>
 
                 <nav className={styles.nav_top}>
-                    <a href="/login" className={styles.link_login} onClick={handlePopupToggle}>
+                <a href="#login" className={styles.link_login} onClick={handlePopupToggle}>
                         Register/Login
                     </a>
                     <button className={styles.btn_more} id="openMenu">
@@ -110,8 +119,18 @@ export function Header() {
                     </button>
                 </nav>
 
-            </header>
+                {isPopupVisible && (
+                    <Modal
+                        isOpen={isPopupVisible}
+                        onRequestClose={handleCloseModal}
+                        contentLabel="Login Modal"
+                    >
+                        <LoginPopup onClose={handleCloseModal} />
+                    </Modal>
+                )}
 
+
+            </header>
             <nav className={styles.nav_bot}>
                 <a href="#">
                     Camisetas
@@ -124,7 +143,7 @@ export function Header() {
                 </a>
 
             </nav>
-            {isPopupVisible && <LoginPopup onClose={handlePopupToggle} />}
+
         </div>
     )
 }
