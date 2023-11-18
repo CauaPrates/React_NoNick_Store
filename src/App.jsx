@@ -34,7 +34,7 @@ export function App() {
           {shouldShowHeaderFooter && <Header onRegisterClick={handleModalToggle} />}
           {isModalVisible && <Modal onClose={handleModalToggle} />}
           <Main />
-          {shouldShowHeaderFooter && <Footer />}
+          {shouldShowHeaderFooter && <Footer onRegisterClick={handleModalToggle}  />}
         </Route>
       </Switch>
     </div>

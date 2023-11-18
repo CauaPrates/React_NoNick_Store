@@ -72,29 +72,29 @@ export function Footer() {
                             </li>
                             <li>
                                 <a href="https://github.com/CauaPrates/React_NoNick_Store" target="_blank" className={styles.footer_link}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29"
-                                    fill="none">
-                                    <path
-                                        d="M19.4765 27V23.4173C19.5233 22.8221 19.4429 22.2237 19.2406 21.6619C19.0382 21.1002 18.7187 20.5878 18.3031 20.1592C22.2228 19.7223 26.3423 18.2367 26.3423 11.4209C26.3419 9.67799 25.6716 8.00195 24.4698 6.73964C25.0388 5.21482 24.9986 3.52938 24.3575 2.03345C24.3575 2.03345 22.8844 1.59653 19.4765 3.88097C16.6153 3.10553 13.5994 3.10553 10.7382 3.88097C7.33028 1.59653 5.85725 2.03345 5.85725 2.03345C5.21607 3.52938 5.17584 5.21482 5.7449 6.73964C4.53417 8.01131 3.86307 9.70251 3.87241 11.4583C3.87241 18.2243 7.99188 19.7098 11.9116 20.1966C11.5009 20.621 11.1842 21.1271 10.982 21.682C10.7798 22.2369 10.6968 22.8282 10.7382 23.4173V27"
-                                        stroke="#E9EBF8" stroke-width="3" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M10.7383 24.5033C6.99331 25.7182 3.87249 24.5033 2 20.7583"
-                                        stroke="#E9EBF8" stroke-width="3" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29"
+                                        fill="none">
+                                        <path
+                                            d="M19.4765 27V23.4173C19.5233 22.8221 19.4429 22.2237 19.2406 21.6619C19.0382 21.1002 18.7187 20.5878 18.3031 20.1592C22.2228 19.7223 26.3423 18.2367 26.3423 11.4209C26.3419 9.67799 25.6716 8.00195 24.4698 6.73964C25.0388 5.21482 24.9986 3.52938 24.3575 2.03345C24.3575 2.03345 22.8844 1.59653 19.4765 3.88097C16.6153 3.10553 13.5994 3.10553 10.7382 3.88097C7.33028 1.59653 5.85725 2.03345 5.85725 2.03345C5.21607 3.52938 5.17584 5.21482 5.7449 6.73964C4.53417 8.01131 3.86307 9.70251 3.87241 11.4583C3.87241 18.2243 7.99188 19.7098 11.9116 20.1966C11.5009 20.621 11.1842 21.1271 10.982 21.682C10.7798 22.2369 10.6968 22.8282 10.7382 23.4173V27"
+                                            stroke="#E9EBF8" stroke-width="3" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M10.7383 24.5033C6.99331 25.7182 3.87249 24.5033 2 20.7583"
+                                            stroke="#E9EBF8" stroke-width="3" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
                                 </a>
                             </li>
                             <li>
                                 <a href="https://github.com/SamuelSoaresSilva/SpringBoot_API-REST/tree/Portable_Api_Without_ImageUpload" target="_blank" className={styles.footer_link}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
-  <path d="M26.9997 2L25.6108 3.31579" stroke="#E9EBF8" stroke-width="3.06403" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M2 2L3.38889 3.31579" stroke="#E9EBF8" stroke-width="3.06403" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M26.9997 20.4208L25.6108 19.105" stroke="#E9EBF8" stroke-width="3.06403" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M2 20.4208L3.38889 19.105" stroke="#E9EBF8" stroke-width="3.06403" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M10.3335 23.0522H18.6668" stroke="#E9EBF8" stroke-width="3.06403" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M11.7224 27H17.278" stroke="#E9EBF8" stroke-width="3.06403" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M14.4997 3.31543C8.944 3.31543 6.09978 5.8816 6.16643 9.89438C6.19891 11.8508 6.86066 13.1839 8.24976 14.4996C9.63886 15.8154 10.3333 16.4733 10.3331 19.1049H18.6664C18.6666 16.4735 19.3611 15.8154 20.7496 14.4998C22.1383 13.184 22.8007 11.8508 22.833 9.89438C22.8997 5.8816 20.0555 3.31543 14.4997 3.31543Z" stroke="#E9EBF8" stroke-width="3.06403" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+                                        <path d="M26.9997 2L25.6108 3.31579" stroke="#E9EBF8" stroke-width="3.06403" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M2 2L3.38889 3.31579" stroke="#E9EBF8" stroke-width="3.06403" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M26.9997 20.4208L25.6108 19.105" stroke="#E9EBF8" stroke-width="3.06403" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M2 20.4208L3.38889 19.105" stroke="#E9EBF8" stroke-width="3.06403" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M10.3335 23.0522H18.6668" stroke="#E9EBF8" stroke-width="3.06403" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M11.7224 27H17.278" stroke="#E9EBF8" stroke-width="3.06403" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M14.4997 3.31543C8.944 3.31543 6.09978 5.8816 6.16643 9.89438C6.19891 11.8508 6.86066 13.1839 8.24976 14.4996C9.63886 15.8154 10.3333 16.4733 10.3331 19.1049H18.6664C18.6666 16.4735 19.3611 15.8154 20.7496 14.4998C22.1383 13.184 22.8007 11.8508 22.833 9.89438C22.8997 5.8816 20.0555 3.31543 14.4997 3.31543Z" stroke="#E9EBF8" stroke-width="3.06403" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
                                 </a>
                             </li>
                         </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom';
 import { Store } from '../pages/Store';
 
-import LoginPopup from '../components/LoginPopup';
+import Modal from './ModalWindow';
 
 export const Main = () => {
 
@@ -10,7 +10,7 @@ export const Main = () => {
     
     <Switch>
         <Route exact path='/' component={Store}/>
-        <Route exact path='/login' component={LoginPopup}/>
+        <Route exact path='/login' component={Modal}/>
     </Switch>
   )
 }

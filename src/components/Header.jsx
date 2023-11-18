@@ -1,27 +1,30 @@
 import React, { useState } from 'react';
 import styles from '../components/Header.module.css';
 import NoNickLogo from '../assets/noNickLogo 2.svg';
-import LoginPopup from './LoginPopup';
 import Modal from 'react-modal';
+import ModalWindow from './ModalWindow';
+
+// Importe o estilo do Modal
+import '../components/Modal.module.css';
 
 // Configuração do react-modal
 Modal.setAppElement('#root'); // Substitua '#root' pelo id do elemento root da sua aplicação.
 
 export function Header({ onLoginClick }) {
-    const [isPopupVisible, setPopupVisibility] = useState(false);
+    const [isModalVisible, setModalVisibility] = useState(false);
 
-    const handlePopupToggle = () => {
-        setPopupVisibility(!isPopupVisible);
+    const handleModalToggle = () => {
+        setModalVisibility(!isModalVisible);
     };
 
     const handleCloseModal = () => {
-        setPopupVisibility(false);
+        setModalVisibility(false);
     };
 
     return (
         <div className={styles.headerContainer}>
-        {isPopupVisible && <div className={styles.blurBackground} onClick={handleCloseModal}></div>}
-        <header>
+            {isModalVisible && <div className={styles.blurBackground} onClick={handleCloseModal}></div>}
+            <header>
 
                 <nav className={styles.menu} id="menu">
 
@@ -43,9 +46,9 @@ export function Header({ onLoginClick }) {
                 </nav>
 
                 <nav className={styles.nav_top}>
-                <a href="#login" className={styles.link_login} onClick={handlePopupToggle}>
+                    <button className={styles.btn_login} onClick={handleModalToggle}>
                         Register/Login
-                    </a>
+                    </button>
                     <button className={styles.btn_more} id="openMenu">
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 25 20" fill="none">
                             <path d="M2 2H23H2Z" fill="currentColor" />
@@ -119,17 +122,7 @@ export function Header({ onLoginClick }) {
                     </button>
                 </nav>
 
-                {isPopupVisible && (
-                    <Modal
-                        isOpen={isPopupVisible}
-                        onRequestClose={handleCloseModal}
-                        contentLabel="Login Modal"
-                    >
-                        <LoginPopup onClose={handleCloseModal} />
-                    </Modal>
-                )}
-
-
+                
             </header>
             <nav className={styles.nav_bot}>
                 <a href="#">
@@ -143,7 +136,13 @@ export function Header({ onLoginClick }) {
                 </a>
 
             </nav>
-
+            {isModalVisible && (
+                    <ModalWindow
+                        isOpen={isModalVisible}
+                        onRequestClose={handleCloseModal}
+                        contentLabel="Login Modal"
+                    />
+                )}
         </div>
     )
 }
