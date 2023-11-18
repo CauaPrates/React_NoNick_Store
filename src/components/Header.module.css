@@ -43,34 +43,85 @@ header nav {
   gap: 1rem; /* Utilizando uma unidade relativa */
 }
 
-#openMenu,
-#closeMenu,
-#menu {
-  display: none;
+
+
+.nav_bot {
+  flex: 1 1 100vw;
+  height: 2.5rem; /* Utilizando uma unidade relativa */
+  justify-content: center;
+  align-items: center;
 }
 
-.menu {
-  display: none;
+nav a {
+  margin: 1%;
+  font-size: 1.3rem; /* Utilizando uma unidade relativa */
+  position: relative;
+  font-weight: bolder;
+  color: black;
+}
+
+nav a::before {
+  content: '';
   position: absolute;
-  left: -15px;
-  right: 0;
-  top: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #18272F;
   bottom: 0;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--color-light);
-  padding-left: 1.5625rem; /* Utilizando uma unidade relativa */
-  padding-top: 3.75rem; /* Utilizando uma unidade relativa */
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
 }
 
-.btm_xContainer {
-  padding-left: 0.18rem; /* Utilizando uma unidade relativa */
-  padding-bottom: 3.75rem; /* Utilizando uma unidade relativa */
+nav a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.btn_login {
+  margin: 1%;
+  font-size: 1.3rem; /* Utilizando uma unidade relativa */
+  position: relative;
+  font-weight: bolder;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn_login::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #18272F;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn_login:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.menu_bar_container{
+  margin: 0.62rem;
+  display: none;
 }
 
 @media only screen and (max-width: 717px) {
-  .menu_bar_container {
+ 
+  .link_login,
+  .btn_user,
+  .btn_search,
+  .nav_bot,
+  .btn_login {
+    display: none;
+  }
+
+  .menu_bar_container{
     display: block;
   }
 
@@ -93,76 +144,35 @@ header nav {
     text-align: center;
   }
 
-  .nav_bot {
-    flex: 1 1 100vw;
-    height: 2.5rem; /* Utilizando uma unidade relativa */
-    justify-content: center;
-    align-items: center;
-  }
-
-  nav a {
-    margin: 1%;
-    font-size: 1.3rem; /* Utilizando uma unidade relativa */
-    position: relative;
-    font-weight: bolder;
-    color: black;
-  }
-
-  nav a::before {
-    content: '';
+  .menu {
+    display: none;
     position: absolute;
-    width: 100%;
-    height: 3px;
-    background-color: #18272F;
+    left: -15px;
+    right: 0;
+    top: 0;
     bottom: 0;
-    left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-light);
+    padding-left: 1.5625rem; /* Utilizando uma unidade relativa */
+    padding-top: 3.75rem; /* Utilizando uma unidade relativa */
   }
 
-  nav a:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
+  .btm_xContainer {
+    padding-left: 0.18rem; /* Utilizando uma unidade relativa */
+    padding-bottom: 3.75rem; /* Utilizando uma unidade relativa */
   }
+}
 
-  .btn_login {
-    margin: 1%;
-    font-size: 1.3rem; /* Utilizando uma unidade relativa */
-    position: relative;
-    font-weight: bolder;
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+@media only screen and (max-width: 923px) {
+  main {
+    height: calc(100vh - 13.125rem); /* Utilizando uma unidade relativa */
   }
+}
 
-  .btn_login::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background-color: #18272F;
-    bottom: 0;
-    left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .btn_login:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
-  }
-
-  @media only screen and (max-width: 923px) {
-    main {
-      height: calc(100vh - 13.125rem); /* Utilizando uma unidade relativa */
-    }
-  }
-
-  @media only screen and (max-width: 717px) {
-    nav {
-      height: 6rem; /* Utilizando uma unidade relativa */
-    }
+@media only screen and (max-width: 717px) {
+  nav {
+    height: 6rem; /* Utilizando uma unidade relativa */
   }
 }

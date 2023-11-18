@@ -38,23 +38,7 @@ export function Header({ onLoginClick }) {
                     <button className={styles.btn_login} onClick={handleModalToggle}>
                         Register/Login
                     </button>
-
-                 
-
-                    
-                    <button className={styles.btn_more} id="openMenu">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 25 20" fill="none">
-                            <path d="M2 2H23H2Z" fill="currentColor" />
-                            <path d="M2 2H23" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M2 10H23H2Z" fill="currentColor" />
-                            <path d="M2 10H23" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M2 18H23H2Z" fill="currentColor" />
-                            <path d="M2 18H23" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
+                                     
                 </nav>
 
                 <a href="/">
