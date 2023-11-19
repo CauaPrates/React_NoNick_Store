@@ -14,6 +14,7 @@ const ModalWindow = ({ isOpen, onClose }) => {
 
     return (
         <div className={styles.modalOverlay}  onClick={(e) => e.stopPropagation()}>
+            
                 <main>
                     <div className={styles.leftContainer}>
                         <div className={styles.logoContainer}>
@@ -21,10 +22,8 @@ const ModalWindow = ({ isOpen, onClose }) => {
                         </div>
 
                         <div className={styles.welcomeContainer}>
-                            <h2>
-                                Seja bem-vindo!!
-                            </h2>
-                            <br />
+                            <h2>Seja bem-vindo!!</h2>
+                            
                             <p>
                                 ainda não tem uma conta? <br />
                                 acesse para efetuar suas compras
@@ -39,6 +38,7 @@ const ModalWindow = ({ isOpen, onClose }) => {
                             </div>
 
                             <div>
+                                <br/>
                                 <a href="#">
                                     Esqueci minha senha
                                 </a>
@@ -52,7 +52,7 @@ const ModalWindow = ({ isOpen, onClose }) => {
                             <p>Preencha seus dados</p>
                         </div>
 
-                        <form id="noteForm">
+                        <form className={styles.noteForm} id="noteForm">
                             <label htmlFor="username"></label>
                             <input type="text" placeholder="Usuário:" id="username" name="username" minLength="5" maxLength="10" required /><br /><br />
 
