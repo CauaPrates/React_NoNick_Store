@@ -1,7 +1,7 @@
 /* Outros estilos aqui */
 
 .menu_container {
-    
+   
     display: flex;
     width: fit-content;
     height: max-content;
@@ -42,6 +42,35 @@
 
   }
   
+  nav a::before {
+    
+    background-color: var(--cinza-100);
+    
+  }
   
-  /* Adicione animações ou estilos específicos para a transição entre os modos */
+  .btn_login {
+    margin: 1%;
   
+    position: relative;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .btn_login::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--cinza-100);
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .btn_login:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }

@@ -1,7 +1,23 @@
 import React, { useState } from 'react';
 import styles from '../components/Menu.module.css';
+import Modal from 'react-modal';
+import ModalWindow from './ModalWindow';
+
+Modal.setAppElement('#root');
 
 export const Menu = () => {
+
+  const [isModalVisible, setModalVisibility] = useState(false);
+
+  const handleModalToggle = () => {
+      setModalVisibility(!isModalVisible);
+  };
+
+  const handleCloseModal = () => {
+      setModalVisibility(false);
+  };
+
+    /* Sidebar */
 
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -11,6 +27,11 @@ export const Menu = () => {
 
   return (
     <div className={`${styles.menu_container} ${sidebarOpen ? styles.sidebar_open : ''}`}>
+
+          
+          {isModalVisible && <div className={styles.blurBackground} onClick={handleCloseModal}></div>}
+
+
         
         <button className={`${styles.btn_x} ${sidebarOpen ? styles.show : ''}`} onClick={handleToggleSidebar} style={{ display: sidebarOpen ? 'block' : 'none' }}>
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 25 25" fill="none">
@@ -34,10 +55,9 @@ export const Menu = () => {
         
       {sidebarOpen && (
         <nav className={styles.menu_nav}>
-          {/* Conteúdo do menu */}
           <div>
             <ul className={styles.menu_ul}>
-              <li><a href=''>Register/Login</a></li>
+              <li><button className={styles.btn_login} onClick={handleModalToggle}><a>Register/Login</a></button></li>
               <li><a href="">Camisetas</a></li>
               <li><a href="">Tênis</a></li>
               <li><a href="">Acessórios</a></li>
@@ -47,6 +67,13 @@ export const Menu = () => {
           </div>
         </nav>
       )}
+      {isModalVisible && (
+                    <ModalWindow
+                        isOpen={isModalVisible}
+                        onRequestClose={handleCloseModal}
+                        contentLabel="Login Modal"
+                    />
+                )}
     </div>
   );
 }
