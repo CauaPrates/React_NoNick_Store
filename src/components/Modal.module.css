@@ -1,14 +1,15 @@
 .modalOverlay {
-    position: absolute;
+    z-index: 1;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.37);
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 
@@ -31,7 +32,7 @@ main {
     display: flex;
     flex-direction: row;
     width: min-content;
-    background-color: #323232;
+    
 }
 
 button {
@@ -40,8 +41,9 @@ button {
     cursor: pointer;
 }
 
-a {
+.leftContainer a {
     color: var(--color-light1);
+    text-decoration: underline;
 }
 
 .leftContainer,
@@ -50,10 +52,9 @@ a {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    width: max-content;
     border-radius: 1.5rem;
     padding: 3rem;
-    height: fit-content;
-    width: max-content;
     background-color: #c6c6c6;
 }
 
@@ -65,7 +66,7 @@ a {
     color: var(--color-light1);
     background-size: cover;
     background-position: center;
-    gap: 2.8rem;
+    
 }
 
 .leftContainer a {
@@ -73,7 +74,7 @@ a {
 }
 
 .leftContainer .buttonContainer {
-    gap: 3rem;
+    
     display: flex;
     flex-direction: column;
 }
@@ -84,20 +85,15 @@ a {
     color: var(--color-light1);
     font-weight: bolder;
 }
-
-.leftContainer .logoContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1.5rem;
+.welcomeContainer h2{
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    text-align: center;
 }
-
-.leftContainer .logo {
-  max-width: 100%; /* Ajuste o valor conforme necessário */
-  height: auto;
+.welcomeContainer p{
+    margin-bottom: 3rem;
+    text-align: center;
 }
-
-
 .buttonContainer {
     text-align: center;
     font-weight: bolder;
@@ -106,6 +102,7 @@ a {
     margin: 0 64px;
     border-radius: 0.75rem;
 }
+
 
 /* CONTAINER DIREITA */
 .rightContainer {
@@ -125,12 +122,19 @@ a {
 }
 
 .rightContainer .LoginTittle {
+    
     margin-bottom: 1.75rem;
 }
-
-#noteForm input {
+.loginTitle h2{
+    text-align: center;
+    padding-bottom: 0.4rem;
+}
+.loginTitle p{
+    padding-bottom: 2rem;
+}
+.noteForm input {
     font-weight: bolder;
-    height: 0.9375rem;
+    height: 2.5rem;
     padding: 0.625rem;
     width: 15.625rem;
     border-radius: 0.4375rem;
@@ -138,25 +142,54 @@ a {
     border: 0.125rem solid var(--color-dark2);
 }
 
+
 @media only screen and (max-width: 44.813rem) {
     main {
-        background-color: red;
+        
         flex-direction: column;
         width: 100%;
-        height: max-content;
+        height: min-content;
     }
 
     .leftContainer,
     .rightContainer {
         border-radius: 0%;
         align-items: flex-start;
-        text-align: left;
+        text-align: start;
+        justify-content: start;
+        width: 100%;
+        padding: 2rem;
         justify-content: flex-start;
+    }
+    .loginTitle h2, .loginTitle p,.welcomeContainer h2, .welcomeContainer p {
+        text-align: start;
+        
+    }
+    .leftContainer{
+        border-top-right-radius: 1.5rem;
+        border-top-left-radius: 1.5rem;
+    }
+    .rightContainer{
+        border-bottom-right-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
     }
 
     .rightContainer .LoginTittle {
-        margin-bottom: 1rem;
+
+        padding-bottom: 0.5rem;
     }
+    .welcomeContainer h2{
+
+        margin-top: 2rem;
+        padding-bottom: 0.2rem;
+
+    }
+    .welcomeContainer p{
+
+        margin-bottom: 1rem;
+
+    }
+    
 
     .buttonContainer {
         margin: 0;

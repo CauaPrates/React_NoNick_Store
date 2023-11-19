@@ -107,6 +107,7 @@ nav a:hover::before {
 }
 
 .menu_bar_container{
+  z-index: 1;
   margin: 0.62rem;
   display: none;
 }
