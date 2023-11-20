@@ -49,56 +49,65 @@ export const Store = () =>{
     return (
 
     <div className={styles.main}>
-        <h2>T-shirts</h2>
+        <h2>Camisetas</h2>
         <div className={styles.div_prods}>
             
         {dataCamisetas.length > 0 && (
                     dataCamisetas.map((item) => (
+                        <a href="#" className={styles.link_prod}>
                         <div className="div_prod" key={item.idProduct}>
                             <div>
                                 <img src={item.thumbnail} className={styles.img_prod} alt="Not Found" />
                             </div>
                             <div className={styles.div_info}>
-                                <a href="#"><h4>{truncateText(item.name)}</h4></a>
+                                <h4>{truncateText(item.name)}</h4>
                                 <p>R$ {formatNumber(item.value)}</p>
                             </div>
                         </div>
+                        </a>
                     ))
+
                 )}
 
         </div>
-        <h2>Sneakers</h2>
+        <h2>Tênis</h2>
         <div className={styles.div_prods}>
             
         {dataTenis.length > 0 && (
                     dataTenis.map((item) => (
+
+                        <a href="#" className={styles.link_prod}>
                         <div className="div_prod" key={item.idProduct}>
                             <div>
                                 <img src={item.thumbnail} className={styles.img_prod} alt="Not Found" />
                             </div>
                             <div className={styles.div_info}>
-                                <a href="#"><h4>{truncateText(item.name)}</h4></a>
+                                <h4>{truncateText(item.name)}</h4>
                                 <p>R$ {formatNumber(item.value)}</p>
                             </div>
                         </div>
+                        </a>
                     ))
                 )}
 
         </div>
-        <h2>Accessories</h2>
+        <h2>Acessórios</h2>
         <div className={styles.div_prods}>
             
         {dataAcessorios.length > 0 && (
                     dataAcessorios.map((item) => (
+                       
+                        <a href="#" className={styles.link_prod}>
                         <div className="div_prod" key={item.idProduct}>
-                            <div>
-                                <img src={item.thumbnail} className={styles.img_prod} alt="Not Found" />
-                            </div>
+                                <div>
+                                    <img src={item.thumbnail} className={styles.img_prod} alt="Not Found" />
+                                </div>
                             <div className={styles.div_info}>
-                                <a href="#"><h4>{truncateText(item.name)}</h4></a>
+                                <h4>{truncateText(item.name)}</h4>
                                 <p>R$ {formatNumber(item.value)}</p>
                             </div>
                         </div>
+                       </a> 
                     ))
                 )}
 
