@@ -1,0 +1,53 @@
+.ProductDetails{
+    background-color: rgb(152, 152, 152);
+    min-height: 100vh;
+    padding: 1rem;
+    justify-content: center;
+    display: flex;
+    flex: 1 1 0;
+}
+.ProductDetails div{
+    background-color: rgb(123, 123, 123);
+    display: flex;
+}
+.more_images_container, .main_images_container{
+    padding: 1rem 1rem 1rem 0;
+}
+
+.main_images{
+
+    height:70vh; 
+    width:70vh;
+    object-fit: cover;
+
+}
+.more_images{
+   
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+
+}
+.side_details{
+    flex-direction: column;
+    text-align: end;
+    padding-right: 1rem;
+}
+.side_details h3{
+    padding-top: 1rem;
+    font-size: 1.875rem;
+}
+.side_details h4{
+    text-align: start;
+    padding-top: 1rem;
+    font-size: 1rem;
+
+}
+.samllInfo{
+    display: flex;
+    gap: 0.7rem;
+}
+.price{
+    padding-top: 3rem;
+    font-size: 1.7rem;
+}
