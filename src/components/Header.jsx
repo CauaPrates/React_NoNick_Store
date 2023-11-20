@@ -114,7 +114,7 @@ export function Header({ onLoginClick }) {
             {isModalVisible && (
                     <ModalWindow
                         isOpen={isModalVisible}
-                        onRequestClose={handleCloseModal}
+                        onClose={handleCloseModal}
                         contentLabel="Login Modal"
                     />
                 )}
