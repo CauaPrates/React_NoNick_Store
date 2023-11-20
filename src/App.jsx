@@ -25,17 +25,15 @@ export function App() {
 
   return (
     <div className={styles.App}>
-
       <Switch>
         <Route path={pagesWithoutHeaderFooter}>
           <Main />
         </Route>
         <Route path={!pagesWithoutHeaderFooter}>
-
           {shouldShowHeaderFooter && <Header onRegisterClick={handleModalToggle} />}
-          {isModalVisible && <Modal onClose={handleModalToggle} />}
+          {isModalVisible && <ModalWindow onClose={handleModalToggle} />} {/* Use o componente ModalWindow aqui */}
           <Main />
-          {shouldShowHeaderFooter && <Footer onRegisterClick={handleModalToggle}  />}
+          {shouldShowHeaderFooter && <Footer onRegisterClick={handleModalToggle} />}
         </Route>
       </Switch>
     </div>
