@@ -1,5 +1,9 @@
 .main{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
     margin: 30px;
+    min-height: 50vh;
 }
 .div_prods{
     
@@ -16,18 +20,20 @@
 }
 
 .div_info{
+    transition: 500ms;
     text-align: start;
     gap: 8px;
     margin-top: -4px;
-    background-color: #C6C6C6;
-    border: rgb(158, 158, 158) 0.5px solid;
+    background-color: var(white);
     display: flex;
     flex-direction: column;
     padding: 15px;
+    
 }
 
 .img_prod{
    
+    transition: 500ms;
     width: 230px; 
     height: 280px; 
     object-fit: cover;
@@ -43,8 +49,24 @@ h2{
 
 a{
     text-decoration: none;
-    color: black;
+    color: var(--cinza-650);
     font-weight: bold;
+}
+
+
+
+.link_prod div:hover{
+
+    .img_prod{
+   
+        width: 224.42px; 
+        height: 300px; 
+    
+    }
+    .div_info{
+        padding: 7.5px;
+        gap: 3px;
+    }
 }
 
 @media only screen and(max-width: 923px) {
