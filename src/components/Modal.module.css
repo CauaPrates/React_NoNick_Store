@@ -51,6 +51,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: auto;
     text-align: center;
     width: max-content;
     border-radius: 1.5rem;
