@@ -5,8 +5,8 @@ import RegisterModal from './RegisterModal';
 
 const BASE_URL = 'http://localhost:3000';
 
-const login = async (email, senha) => {
-    const url = `${BASE_URL}/auth/login`;
+const login = async (baseUrl, email, senha) => {
+    const url = `${baseUrl}/auth/login`;
 
     try {
         const response = await fetch(url, {
@@ -29,27 +29,13 @@ const login = async (email, senha) => {
     }
 };
 
-const processForm = async () => {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    try {
-        const token = await login(email, password);
-        console.log('Token de login:', token);
-
-        document.getElementById('result').textContent = 'Login bem-sucedido.';
-    } catch (error) {
-        console.error('Erro no login:', error);
-        document.getElementById('result').textContent = 'Erro ao fazer login. Verifique suas credenciais.';
-    }
-};
 const ModalWindow = ({ isOpen, onClose }) => {
     const [isRegisterModalVisible, setRegisterModalVisibility] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const openRegisterModal = () => {
-        // Fechar o modal atual
-
-        // Abrir o modal de registro
         setRegisterModalVisibility(true);
     };
 
@@ -57,7 +43,23 @@ const ModalWindow = ({ isOpen, onClose }) => {
         setRegisterModalVisibility(false);
     };
 
-    console.log('Modal está sendo renderizado. isOpen:', isOpen);
+    const processForm = async () => {
+        try {
+            // Chamar a função de login com email e senha
+            const token = await login(BASE_URL, email, password);
+
+            // Se o login for bem-sucedido, você pode fazer algo com o token
+            console.log('Token de login:', token);
+
+            // Fechar o modal
+            onClose();
+        } catch (error) {
+            console.error('Erro no login:', error);
+
+            // Tratar o erro e exibir uma mensagem
+            setError('Erro ao fazer login. Verifique suas credenciais.');
+        }
+    };
 
     return (
         <div className={styles.modalOverlay} onClick={(e) => e.stopPropagation()}>
@@ -65,7 +67,7 @@ const ModalWindow = ({ isOpen, onClose }) => {
             <main>
                 <div className={styles.leftContainer}>
                     <div className={styles.logoContainer} onClick={onClose}>
-                        <a href="javascript:void(0)"><img src={noNickLogo} className={styles.logo} alt="NoNick" /></a>
+                        <a href="#"><img src={noNickLogo} className={styles.logo} alt="NoNick" /></a>
                     </div>
 
                     <div className={styles.welcomeContainer}>
@@ -95,7 +97,7 @@ const ModalWindow = ({ isOpen, onClose }) => {
 
                 <div className={styles.rightContainer}>
                     <div onClick={onClose}>
-                        <a href='javascript:void(0)'> {/* ou href='#' */}
+                        <a href='#'> {/* ou href='#' */}
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 25 25" fill="none">
                                 <path d="M2 23L12.5 12.5001M12.5 12.5001L23 2M12.5 12.5001L2 2M12.5 12.5001L23 23"
                                     stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
@@ -108,17 +110,40 @@ const ModalWindow = ({ isOpen, onClose }) => {
                     </div>
 
                     <form className={styles.noteForm} id="noteForm">
-                        <label for="email"></label>
-                        <input type="email" placeholder="Email:" id="email" name="email" minlength="5" maxlength="127" required /><br /><br />
+                        <label htmlFor="email"></label>
+                        <input
+                            type="email"
+                            placeholder="Email:"
+                            id="email"
+                            name="email"
+                            minLength="5"
+                            maxLength="127"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        /><br /><br />
 
-                        <label for="password"></label>
-                        <input type="password" placeholder="Senha:" id="password" name="password" minlength="8" maxlength="15" required /><br /><br />
+                        <label htmlFor="password"></label>
+                        <input
+                            type="password"
+                            placeholder="Senha:"
+                            id="password"
+                            name="password"
+                            minLength="8"
+                            maxLength="15"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        /><br /><br />
+
                         <div className={styles.buttonRContainer}>
-                            <button type="submit" onClick={processForm}>Login</button>
+                            <button type="button" onClick={processForm}>Login</button>
                         </div>
                     </form>
+                    
+                    <br />
 
-                    <div id="result"></div>
+                    <div id="result">{error}</div>
                 </div>
             </main>
 
