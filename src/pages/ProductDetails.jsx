@@ -19,34 +19,35 @@ export const ProductDetails = ({ match }) => {
     }
 
     return (
+        <div className={styles.main_countainer_details}>
 
-        <div className={styles.ProductDetails}>
-            <div className={styles.images}>
+            <div className={styles.row_itens}>
                 <div className={styles.more_images_container}>
                     {
-                        product.productImages.map((image)=>(
-                        <img src={image} className={styles.more_images} alt="Not found"/>
+                        product.productImages.map((image) => (
+                            <img src={image} className={styles.more_images} alt="Not found" />
                         ))
                     }
                 </div>
-                <div className={styles.main_images_container}>
-                    <img src={product.thumbnail} className={styles.main_images} alt="Not found"/>
-                </div>
-            </div>
-            <div className={styles.side_details}>
-                <h3>{product.name}</h3>
-                <div className={styles.samllInfo}>
-                <h4>marca: {product.brand}</h4>
-                <h4>{product.quantity} disponiveis</h4>
-                </div>
-                
-                <p className={styles.price}>R$ {product.value.toFixed(2)}</p>
-                
-                
-                
-            </div>
-        </div>
 
+
+                <div className={styles.product_info}>
+                    <h3 className={styles.product_name}>{product.name}</h3>
+                    <h4 className={styles.product_brand}>{product.brand}</h4>
+                    <h4 className={styles.product_quantity}>{product.quantity} disponiveis</h4>
+                    <p className={styles.product_price}>R$ {product.value.toFixed(2)}</p>
+                    <div className={styles.product_description}>
+                        {product.description}
+                    </div>
+                    
+                    <button className={styles.btn_buy}>Comprar</button>
+                    <button className={styles.btn_add_cart}>Adicionar ao carrinho</button>
+                </div>
+
+            </div>
+
+
+        </div>
     )
 }
 
