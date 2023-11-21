@@ -66,6 +66,14 @@ const RegisterModal = ({ isOpen, onClose }) => {
     <div className={styles.modalOverlay} onClick={(e) => e.stopPropagation()}>
       <main>
         <div className={styles.leftContainer}>
+        <div className={styles.btn_close} onClick={onClose}>
+            <a href='javascript:void(0)'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 25 25" fill="none">
+                <path d="M2 23L12.5 12.5001M12.5 12.5001L23 2M12.5 12.5001L2 2M12.5 12.5001L23 23"
+                  stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </div>
           <div className={styles.logoContainer} onClick={onClose}>
             <a href="#"><img src={noNickLogo} className={styles.logo} alt="NoNick" /></a>
           </div>
@@ -73,8 +81,8 @@ const RegisterModal = ({ isOpen, onClose }) => {
           <div className={styles.welcomeContainer}>
             <h2>Seja bem-vindo!!</h2>
             <p>
-              Registre-se para uma<br />
-              melhor experiência
+              Já tem uma conta?<br/>
+              logue para efetuar suas compras
             </p>
           </div>
 
@@ -95,7 +103,8 @@ const RegisterModal = ({ isOpen, onClose }) => {
         </div>
 
         <div className={styles.rightContainer}>
-          <div onClick={onClose}>
+
+          <div className={styles.btn_close} onClick={onClose}>
             <a href='javascript:void(0)'> {/* ou href='#' */}
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 25 25" fill="none">
                 <path d="M2 23L12.5 12.5001M12.5 12.5001L23 2M12.5 12.5001L2 2M12.5 12.5001L23 23"
@@ -103,6 +112,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
               </svg>
             </a>
           </div>
+          
           <div className={styles.loginTitle}>
             <h2>Faça seu registro</h2>
             <p>Preencha seus dados</p>
@@ -151,7 +161,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
               <button type="button" onClick={processForm}>Cadastrar</button>
             </div>
           </form>
-
+          <br/>
           <div id="result">{error}</div>
         </div>
       </main>

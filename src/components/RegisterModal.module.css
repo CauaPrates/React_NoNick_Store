@@ -121,17 +121,12 @@ button {
     border-radius: 0.75rem;
     color: var(--color-light1);
 }
-
-.rightContainer .LoginTittle {
-    
-    margin-bottom: 1.75rem;
-}
 .loginTitle h2{
+    margin-top: 0.5rem;
     text-align: center;
-    padding-bottom: 0.4rem;
 }
 .loginTitle p{
-    padding-bottom: 2rem;
+    padding-bottom: 0.5rem;
 }
 .noteForm input {
     font-weight: bolder;
@@ -142,7 +137,12 @@ button {
     background-color: #e9ebf8;
     border: 0.125rem solid var(--color-dark2);
 }
-
+.leftContainer .btn_close{
+    display: none;
+}
+.rightContainer .btn_close{
+    text-align: end;
+}
 
 @media only screen and (max-width: 44.813rem) {
     main {
