@@ -54,7 +54,7 @@ export const Store = () =>{
             
         {dataCamisetas.length > 0 && (
                     dataCamisetas.map((item) => (
-                        <a href="#" className={styles.link_prod}>
+                        <a href={'/product/'+item.idProduct} className={styles.link_prod}>
                         <div className="div_prod" key={item.idProduct}>
                             <div>
                                 <img src={item.thumbnail} className={styles.img_prod} alt="Not Found" />
@@ -76,7 +76,7 @@ export const Store = () =>{
         {dataTenis.length > 0 && (
                     dataTenis.map((item) => (
 
-                        <a href="#" className={styles.link_prod}>
+                        <a href={'/product/'+item.idProduct} className={styles.link_prod}>
                         <div className="div_prod" key={item.idProduct}>
                             <div>
                                 <img src={item.thumbnail} className={styles.img_prod} alt="Not Found" />
@@ -97,7 +97,7 @@ export const Store = () =>{
         {dataAcessorios.length > 0 && (
                     dataAcessorios.map((item) => (
                        
-                        <a href="#" className={styles.link_prod}>
+                        <a href={'/product/'+item.idProduct} className={styles.link_prod}>
                         <div className="div_prod" key={item.idProduct}>
                                 <div>
                                     <img src={item.thumbnail} className={styles.img_prod} alt="Not Found" />
