@@ -70,3 +70,11 @@
 .btn_add_cart{
     text-decoration: underline;
 }
+.fakeImage{
+    height: 25rem;
+    width: 25rem;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background-color: var(--color-light1);
+}
