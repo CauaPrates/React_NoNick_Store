@@ -123,17 +123,14 @@ button {
     color: var(--color-light1);
 }
 
-.rightContainer .LoginTittle {
-    
-    margin-bottom: 1.75rem;
-}
 .loginTitle h2{
+    margin-top: 2rem;
     text-align: center;
-    padding-bottom: 0.4rem;
 }
 .loginTitle p{
     padding-bottom: 2rem;
 }
+
 .noteForm input {
     font-weight: bolder;
     height: 2.5rem;
@@ -142,6 +139,13 @@ button {
     border-radius: 0.4375rem;
     background-color: #e9ebf8;
     border: 0.125rem solid var(--color-dark2);
+}
+
+.leftContainer .btn_close{
+    display: none;
+}
+.rightContainer .btn_close{
+    text-align: end;
 }
 
 
@@ -192,9 +196,9 @@ button {
 
     }
     
-
     .buttonContainer {
         margin: 0;
         padding: 0 2rem;
     }
+    
 }

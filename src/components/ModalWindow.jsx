@@ -65,7 +65,16 @@ const ModalWindow = ({ isOpen, onClose }) => {
         <div className={styles.modalOverlay} onClick={(e) => e.stopPropagation()}>
 
             <main>
+
                 <div className={styles.leftContainer}>
+                    <div className={styles.btn_close} onClick={onClose}>
+                        <a href='javascript:void(0)'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 25 25" fill="none">
+                                <path d="M2 23L12.5 12.5001M12.5 12.5001L23 2M12.5 12.5001L2 2M12.5 12.5001L23 23"
+                                    stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
                     <div className={styles.logoContainer} onClick={onClose}>
                         <a href="#"><img src={noNickLogo} className={styles.logo} alt="NoNick" /></a>
                     </div>
@@ -75,7 +84,7 @@ const ModalWindow = ({ isOpen, onClose }) => {
 
                         <p>
                             ainda não tem uma conta? <br />
-                            acesse para efetuar suas compras
+                            crie para efetuar suas compras
                         </p>
 
                         <div className={styles.buttonContainer}>
@@ -96,7 +105,8 @@ const ModalWindow = ({ isOpen, onClose }) => {
                 </div>
 
                 <div className={styles.rightContainer}>
-                    <div onClick={onClose}>
+
+                    <div className={styles.btn_close} onClick={onClose}>
                         <a href='#'> {/* ou href='#' */}
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 25 25" fill="none">
                                 <path d="M2 23L12.5 12.5001M12.5 12.5001L23 2M12.5 12.5001L2 2M12.5 12.5001L23 23"
@@ -104,6 +114,7 @@ const ModalWindow = ({ isOpen, onClose }) => {
                             </svg>
                         </a>
                     </div>
+                    
                     <div className={styles.loginTitle}>
                         <h2>Acesse sua conta</h2>
                         <p>Preencha seus dados</p>
@@ -140,7 +151,7 @@ const ModalWindow = ({ isOpen, onClose }) => {
                             <button type="button" onClick={processForm}>Login</button>
                         </div>
                     </form>
-                    
+
                     <br />
 
                     <div id="result">{error}</div>
