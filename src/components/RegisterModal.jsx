@@ -27,7 +27,7 @@ const register = async (newUser) => {
   }
 };
 
-const RegisterModal = ({ isOpen, onClose }) => {
+const RegisterModal = ({ isOpen, onClose, onRegisterSuccess }) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -41,19 +41,13 @@ const RegisterModal = ({ isOpen, onClose }) => {
     };
 
     try {
-      // Chamar a função de registro com o novo usuário
       const registeredUser = await register(newUser);
       console.log('Registro bem-sucedido:', registeredUser);
-
-      // Se o registro for bem-sucedido, você pode fazer algo com o usuário registrado
       document.getElementById('result').textContent = 'Registro bem-sucedido.';
-
-      // Fechar o modal
-      onClose();
+      onRegisterSuccess();
+      onClose(); // Feche apenas o modal de registro
     } catch (error) {
       console.error('Erro no registro:', error);
-
-      // Tratar o erro e exibir uma mensagem
       setError('Erro ao se registrar. Verifique os dados fornecidos.');
     }
   };
@@ -66,7 +60,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
     <div className={styles.modalOverlay} onClick={(e) => e.stopPropagation()}>
       <main>
         <div className={styles.leftContainer}>
-        <div className={styles.btn_close} onClick={onClose}>
+          <div className={styles.btn_close} onClick={onClose}>
             <a href='javascript:void(0)'>
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 25 25" fill="none">
                 <path d="M2 23L12.5 12.5001M12.5 12.5001L23 2M12.5 12.5001L2 2M12.5 12.5001L23 23"
@@ -81,14 +75,14 @@ const RegisterModal = ({ isOpen, onClose }) => {
           <div className={styles.welcomeContainer}>
             <h2>Seja bem-vindo!!</h2>
             <p>
-              Já tem uma conta?<br/>
+              Já tem uma conta?<br />
               logue para efetuar suas compras
             </p>
           </div>
 
           <div className={styles.buttonContainer}>
-            <a href="/" className={styles.aButton}>
-              <button>
+            <a href="" className={styles.aButton}>
+              <button onClick={() => { processForm(); }}>
                 Entrar
               </button>
             </a>
