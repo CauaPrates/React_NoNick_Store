@@ -31,7 +31,7 @@ export function App() {
         </Route>
         <Route path={!pagesWithoutHeaderFooter}>
           {shouldShowHeaderFooter && <Header onRegisterClick={handleModalToggle} />}
-          {isModalVisible && <ModalWindow onClose={handleModalToggle} />} {/* Use o componente ModalWindow aqui */}
+          {isModalVisible && <ModalWindow onClose={handleModalToggle} />} 
           <Main />
           {shouldShowHeaderFooter && <Footer onRegisterClick={handleModalToggle} />}
         </Route>

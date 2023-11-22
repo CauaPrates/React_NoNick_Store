@@ -200,5 +200,13 @@ button {
         margin: 0;
         padding: 0 2rem;
     }
+
+    .leftContainer .btn_close{
+        display: none;
+    }
+    .rightContainer .btn_close{
+        text-align: end;
+    }
+    
     
 }
